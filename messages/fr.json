@@ -1,0 +1,7 @@
+{
+    "navbar": {
+      "home": "Accueil",
+      "login" : "Se connecter",
+      "signup" : "S'inscrire"
+    }
+}
