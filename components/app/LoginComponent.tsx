@@ -44,7 +44,7 @@ export default function LoginComponent() {
       console.log(res);
       localStorage.setItem("accessToken", res.data.accessToken);
 
-      router.push("/dashboard");
+      // router.push("/dashboard");
     } catch (err) {
       console.error("Login Error:", err);
       if (err.response) {

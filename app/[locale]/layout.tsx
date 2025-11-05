@@ -30,6 +30,9 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale}>
+      <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap" rel="stylesheet"/>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
