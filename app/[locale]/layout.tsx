@@ -11,15 +11,15 @@ import { ReactNode, PropsWithChildren } from "react"; // Import necessary React 
 // --- TYPE DEFINITIONS ---
 
 // 1. Define the dynamic parameters expected from the route
-type Params = {
-  locale: string;
-};
+// type Params = {
+//   locale: string;
+// };
 
-// 2. Define the exact type for the Layout component props
-// PropsWithChildren adds the 'children: ReactNode' automatically
-type LayoutProps = PropsWithChildren<{
-  params: Params;
-}>;
+// // 2. Define the exact type for the Layout component props
+// // PropsWithChildren adds the 'children: ReactNode' automatically
+// type LayoutProps = PropsWithChildren<{
+//   params: Params;
+// }>;
 
 // --- FONT DEFINITIONS ---
 const geistSans = Geist({
@@ -40,18 +40,12 @@ export const metadata: Metadata = {
 
 // --- LAYOUT COMPONENT ---
 // Removed 'async' keyword as message fetching is not present, making it a standard layout.
-export default function LocaleLayout({ children, params }: LayoutProps) {
+export default function LocaleLayout({ children }) {
   
   // Access the locale directly from the resolved params object
-  const { locale } = params; 
-
-  // Ensure that the incoming `locale` is valid
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
+ 
   return (
-    <html lang={locale}>
+    <html   >
       <head>
         <link
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap"

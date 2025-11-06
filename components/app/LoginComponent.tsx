@@ -114,7 +114,7 @@ export default function LoginComponent() {
           )}
         </Button>
         <Button variant="outline" className="w-full" disabled={loading}>
-          {t("socialLogin", { provider: "Google" }) || "Login with Google"}{" "}
+          {/* {t("socialLogin", { provider: "Google" }) || "Login with Google"}{" "} */}
           {/* 🌟 Translated Social Login */}
         </Button>
         <Link
