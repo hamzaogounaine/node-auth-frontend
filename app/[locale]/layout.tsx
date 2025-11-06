@@ -6,6 +6,7 @@ import Navbar from "@/components/app/Navbar";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import {AuthProvider} from '../../context/userContext'
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,7 @@ type Props = {
   };
 };
 
-export default async function LocaleLayout({ children, params } : props) {
+export default async function LocaleLayout({ children, params } : Props) {
   // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
