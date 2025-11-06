@@ -1,25 +1,19 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
+// NOTE: Removed unused 'hasLocale', 'routing', and 'notFound' imports
+import { NextIntlClientProvider } from "next-intl"; 
 import Navbar from "@/components/app/Navbar";
-import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
 import { AuthProvider } from '../../context/userContext';
-import { ReactNode, PropsWithChildren } from "react"; // Import necessary React types
+import { PropsWithChildren } from "react"; // Import necessary React types
 
-// --- TYPE DEFINITIONS ---
+// --- TYPE DEFINITION ---
 
-// 1. Define the dynamic parameters expected from the route
-// type Params = {
-//   locale: string;
-// };
-
-// // 2. Define the exact type for the Layout component props
-// // PropsWithChildren adds the 'children: ReactNode' automatically
-// type LayoutProps = PropsWithChildren<{
-//   params: Params;
-// }>;
+// Define the exact type for the Layout component props
+// Since you only need 'children', PropsWithChildren is enough.
+type LayoutProps = PropsWithChildren<{
+  // params has been removed from this type
+}>;
 
 // --- FONT DEFINITIONS ---
 const geistSans = Geist({
@@ -39,13 +33,15 @@ export const metadata: Metadata = {
 };
 
 // --- LAYOUT COMPONENT ---
-// Removed 'async' keyword as message fetching is not present, making it a standard layout.
-export default function LocaleLayout({ children }) {
+// The function now only accepts 'children' as prop.
+export default function LocaleLayout({ children }: LayoutProps) {
   
-  // Access the locale directly from the resolved params object
+  // The logic for accessing locale and validation has been removed.
  
   return (
-    <html   >
+    // WARNING: Since 'locale' is no longer available, 'lang' attribute is empty. 
+    // This may cause issues if not set correctly in your i18n setup.
+    <html lang=""> 
       <head>
         <link
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap"
