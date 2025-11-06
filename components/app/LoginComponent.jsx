@@ -35,7 +35,7 @@ export default function LoginComponent() {
 
   // 🌟 ADDED: Function to map the backend error code to the corresponding i18n key
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(''); // Clear previous errors on new submission
