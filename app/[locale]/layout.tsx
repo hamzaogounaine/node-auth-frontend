@@ -11,9 +11,7 @@ import { PropsWithChildren } from "react"; // Import necessary React types
 
 // Define the exact type for the Layout component props
 // Since you only need 'children', PropsWithChildren is enough.
-type LayoutProps = PropsWithChildren<{
-  // params has been removed from this type
-}>;
+type LayoutProps = PropsWithChildren<{}>;
 
 // --- FONT DEFINITIONS ---
 const geistSans = Geist({

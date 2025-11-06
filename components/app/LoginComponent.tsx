@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import { useState } from "react";
+import React, { useState } from "react";
 import api from "@/lib/api"; // Assuming your configured Axios instance
 import { Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -35,7 +35,7 @@ export default function LoginComponent() {
 
   // 🌟 ADDED: Function to map the backend error code to the corresponding i18n key
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError(''); // Clear previous errors on new submission

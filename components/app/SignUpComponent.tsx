@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import { useState } from "react";
+import React, { useState } from "react";
 import api from "@/lib/api";
 import { Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -37,7 +37,7 @@ export default function SignUpComponent() {
 
   
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setErrors([]);
