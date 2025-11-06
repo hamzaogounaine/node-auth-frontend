@@ -2,7 +2,9 @@
   "navbar": {
     "home": "Home",
     "login": "Login",
-    "signup": "Sign Up"
+    "signup": "Sign Up",
+    "profile" : "Profile",
+    "settings" : "Settings"
   },
   "login": {
     "title": "Log in to your account",

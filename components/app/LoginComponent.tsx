@@ -8,6 +8,7 @@ import api from "@/lib/api"; // Assuming your configured Axios instance
 import { Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl"; // 🌟 ADDED: Import for translations
+import { useAuth } from "@/context/userContext";
 
 // Define a more specific type for field errors (keys should match the backend validation fields)
 const initialFieldErrors = {
@@ -30,6 +31,7 @@ export default function LoginComponent() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const {login} = useAuth()
 
   // 🌟 ADDED: Function to map the backend error code to the corresponding i18n key
 
@@ -42,9 +44,10 @@ export default function LoginComponent() {
       const res = await api.post("/login", { email, password });
 
       console.log(res);
-      localStorage.setItem("accessToken", res.data.accessToken);
+      login(res.data.accessToken)
+      // localStorage.setItem("accessToken", res.data.accessToken);
 
-      // router.push("/dashboard");
+      router.push("/dashboard");
     } catch (err) {
       console.error("Login Error:", err);
       if (err.response) {

@@ -2,7 +2,9 @@
   "navbar": {
     "home": "Accueil",
     "login": "Connexion",
-    "signup": "Inscription"
+    "signup": "Inscription",
+    "profile" : "Profile",
+    "settings" : "Parametre"
   },
   "login": {
     "title": "Connectez-vous à votre compte",

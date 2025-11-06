@@ -1,12 +1,16 @@
 import SignUpComponent from '@/components/app/SignUpComponent'
+import AuthRoute from '@/components/authRoute'
 import React from 'react'
 
-const page = () => {
+const SignUpPage = () => {
   return (
-    <div className='min-h-screen flex items-center'>
+    <div className=' screen-h flex justify-center  items-center'>
       <SignUpComponent />
     </div>
   )
+}
+const page = () => {
+  return <AuthRoute><SignUpPage /></AuthRoute>
 }
 
 export default page

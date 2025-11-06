@@ -116,6 +116,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  .screen-h {
+    min-height: calc(100vh - 4rem);
+  }
   body {
     @apply bg-background text-foreground;
     font-family: 'Satoshi', sans-serif;
